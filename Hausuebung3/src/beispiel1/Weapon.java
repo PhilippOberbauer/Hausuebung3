@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+package beispiel1;
 
 public class Weapon {
     private String name;
@@ -78,7 +77,7 @@ public class Weapon {
 
     @Override
     public String toString() {
-        return "Weapon{" +
+        return "beispiel1.Weapon{" +
                 "name='" + name + '\'' +
                 ", combatType=" + combatType +
                 ", damageType=" + damageType +

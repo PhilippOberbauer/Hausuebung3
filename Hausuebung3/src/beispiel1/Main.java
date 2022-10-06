@@ -1,3 +1,5 @@
+package beispiel1;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,11 +12,10 @@ public class Main {
             List<Weapon> weaponList = new ArrayList<>();
 
             //1.1
-            BufferedReader reader = new BufferedReader(new FileReader("weaponList.csv"));
+            BufferedReader reader = new BufferedReader(new FileReader("weapons.csv"));
             String line = reader.readLine();
-            while (line != null)
+            while ((line = reader.readLine()) != null)
             {
-                line = reader.readLine();
                 String[] arr = line.split(";");
                 CombatType combatType = CombatType.valueOf(arr[1]);
                 DamageType damageType = DamageType.valueOf(arr[2]);
@@ -25,6 +26,7 @@ public class Main {
                 Weapon weapon = new Weapon(arr[0], combatType, damageType, damage, speed, strength, value);
                 weaponList.add(weapon);
             }
+
             //1.2
             DamageComparator damageComparator = new DamageComparator(weaponList);
             weaponList = damageComparator.sortDamage();
@@ -43,7 +45,7 @@ public class Main {
             printable.print(weaponList);
 
             //1.5
-            
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

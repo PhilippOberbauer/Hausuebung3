@@ -1,3 +1,5 @@
+package beispiel1;
+
 import java.util.List;
 
 public class NameComparator {
