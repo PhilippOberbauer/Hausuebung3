@@ -7,8 +7,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            List<Weapon> weapons = new ArrayList<>();
-            BufferedReader reader = new BufferedReader(new FileReader("weapons.csv"));
+            List<Weapon> weaponList = new ArrayList<>();
+
+            //1.1
+            BufferedReader reader = new BufferedReader(new FileReader("weaponList.csv"));
             String line = reader.readLine();
             while (line != null)
             {
@@ -21,10 +23,27 @@ public class Main {
                 int strength = Integer.parseInt(arr[5]);
                 int value = Integer.parseInt(arr[6]);
                 Weapon weapon = new Weapon(arr[0], combatType, damageType, damage, speed, strength, value);
-                weapons.add(weapon);
+                weaponList.add(weapon);
             }
+            //1.2
+            DamageComparator damageComparator = new DamageComparator(weaponList);
+            weaponList = damageComparator.sortDamage();
 
+            //1.3
+            NameComparator nameComparator = new NameComparator(weaponList);
+            weaponList = nameComparator.sortName();
 
+            //1.4
+            Printable printable = (weapons) -> {
+                for (Weapon w : weapons)
+                {
+                    System.out.println(w.toString());
+                }
+            };
+            printable.print(weaponList);
+
+            //1.5
+            
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
