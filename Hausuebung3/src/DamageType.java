@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum DamageType {
+public enum DamageType {
+    SLASHING, MISSILE, BLUNT, PIERCING, NONE
 }

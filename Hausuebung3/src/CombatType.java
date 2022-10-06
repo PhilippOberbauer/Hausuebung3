@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum CombatType {
+public enum CombatType {
+    MELEE, RANGED
 }
