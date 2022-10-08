@@ -4,9 +4,9 @@ import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 public class Predicates {
-    public Predicate<Integer> isEven()
+    public IntPredicate isEven()
     {
-        final Predicate<Integer> isEven = i -> i % 2 == 0;
+        final IntPredicate isEven = i -> i % 2 == 0;
         return isEven;
     }
 
@@ -22,9 +22,9 @@ public class Predicates {
         return isZero;
     }
 
-    public Predicate<String> isNull()
+    public Predicate<Integer> isNull()
     {
-        final Predicate<String> isNull = s -> s == null;
+        final Predicate<Integer> isNull = s -> s == null;
         return isNull;
     }
 
