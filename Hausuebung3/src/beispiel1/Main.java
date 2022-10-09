@@ -28,14 +28,14 @@ public class Main {
             }
 
             //1.2
-            DamageComparator damageComparator = new DamageComparator(weaponList);
-            weaponList = damageComparator.sortDamage();
+            DamageComparator damageComparator = new DamageComparator();
+            weaponList.sort(damageComparator.getDamageComparator());
 
             //1.3
-            NameComparator nameComparator = new NameComparator(weaponList);
-            weaponList = nameComparator.sortName();
+            NameComparator nameComparator = new NameComparator();
+            weaponList.sort(nameComparator.getNameComparator());
 
-            //1.4
+            //1.5
             Printable printable = (weapons) -> {
                 for (Weapon w : weapons)
                 {
@@ -44,7 +44,7 @@ public class Main {
             };
             printable.print(weaponList);
 
-            //1.5
+            //1.6
 
         } catch (IOException e) {
             throw new RuntimeException(e);

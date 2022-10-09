@@ -1,17 +1,13 @@
 package beispiel1;
 
-import java.util.List;
+import java.util.Comparator;
 
 public class DamageComparator {
-    private List<Weapon> list;
+    private Comparator<Weapon> comparator;
 
-    public DamageComparator(List<Weapon> list) {
-        this.list = list;
-    }
-
-    public List<Weapon> sortDamage()
+    public Comparator<Weapon> getDamageComparator()
     {
-        list.sort((w1, w2) -> w1.getDamage() -w2.getDamage());
-        return list;
+        comparator = (w1, w2) -> w2.getDamage() - w1.getDamage();
+        return comparator;
     }
 }

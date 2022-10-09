@@ -1,17 +1,14 @@
 package beispiel1;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class NameComparator {
-    private List<Weapon> list;
+    private Comparator<Weapon> comparator;
 
-    public NameComparator(List<Weapon> list) {
-        this.list = list;
-    }
-
-    public List<Weapon> sortName()
+    public Comparator<Weapon> getNameComparator()
     {
-        list.sort((w1, w2) -> {
+        comparator = ((w1, w2) -> {
             if (w1.getCombatType().toString().equals(w2.getCombatType().toString()))
             {
                 if (w1.getDamageType().toString().equals(w2.getDamageType().toString()))
@@ -29,6 +26,6 @@ public class NameComparator {
             }
         });
 
-        return list;
+        return comparator;
     }
 }
