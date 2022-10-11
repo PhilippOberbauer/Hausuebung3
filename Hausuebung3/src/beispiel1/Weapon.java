@@ -77,14 +77,12 @@ public class Weapon {
 
     @Override
     public String toString() {
-        return "beispiel1.Weapon{" +
-                "name='" + name + '\'' +
-                ", combatType=" + combatType +
-                ", damageType=" + damageType +
-                ", damage=" + damage +
-                ", speed=" + speed +
-                ", strength=" + strength +
-                ", value=" + value +
-                '}';
+        return   "name = " + name +
+                ", combatType = " + combatType +
+                ", damageType = " + damageType +
+                ", damage = " + damage +
+                ", speed = " + speed +
+                ", strength = " + strength +
+                ", value = " + value;
     }
 }
